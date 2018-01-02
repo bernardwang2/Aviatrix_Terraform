@@ -1,11 +1,11 @@
 #Aviatrix
-#Aviatrix_controller_ip = ""
-#Aviatrix_username = "admin"
-#Aviatrix_password = ""
-#Aviatrix_account_name = ""
-#Aviatrix_account_password = ""
-#Aviatrix_account_email = ""
-#Aviatrix_account_number = ""
+#A_controller_ip = ""
+#A_username = "admin"
+#A_password = ""
+#A_account_name = ""
+#A_account_password = ""
+#A_account_email = ""
+#A_account_number = ""
 
 #AWS
 #AWS_ACCESS_KEY = ""

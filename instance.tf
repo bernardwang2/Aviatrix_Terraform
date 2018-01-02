@@ -11,7 +11,7 @@ resource "aws_instance" "VPC-VM" {
   vpc_security_group_ids = ["${element(aws_security_group.allow-ssh-ping-VPC.*.id,count.index)}"]
 
   # the public SSH key
-  key_name = "canada"
+  key_name = "${aws_key_pair.mykeypair.key_name}"
 
   tags{
     Name = "VPC-VM-${count.index}"
@@ -32,7 +32,7 @@ resource "aws_instance" "Prem-VPC-VM" {
   vpc_security_group_ids = ["${aws_security_group.allow-ssh-ping-Prem.id}"]
 
   # the public SSH key
-  key_name = "canada"
+  key_name = "${aws_key_pair.mykeypair.key_name}"
 
 /*
   #ssh into instance

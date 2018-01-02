@@ -1,11 +1,11 @@
 #Aviatrix
-variable "Aviatrix_controller_ip" {}
-variable "Aviatrix_username" {}
-variable "Aviatrix_password" {}
-variable "Aviatrix_account_name" {}
-variable "Aviatrix_account_password" {}
-variable "Aviatrix_account_email" {}
-variable "Aviatrix_account_number" {}
+variable "A_controller_ip" {}
+variable "A_username" {}
+variable "A_password" {}
+variable "A_account_name" {}
+variable "A_account_password" {}
+variable "A_account_email" {}
+variable "A_account_number" {}
 
 #AWS
 variable "AWS_REGION" {
@@ -28,3 +28,11 @@ variable "PATH_TO_PRIVATE_KEY"{
 }
 
 variable "count"{}
+
+variable "PATH_TO_PRIVATE_KEY" {
+  default = "mykey"
+}
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "mykey.pub"
+}
+
