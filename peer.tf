@@ -1,5 +1,5 @@
 resource "aviatrix_tunnel" "tunnel1"{
-  count = "${var.count - 1}"
+  count = "${var.gateways - 1}"
   vpc_name1 = "${element(aviatrix_gateway.VPC-GW.*.gw_name,count.index+1)}"
   vpc_name2 = "${aviatrix_gateway.VPC-GW.0.gw_name}"
   cluster   = "no"                                    

@@ -1,6 +1,6 @@
 #Spoke-VPC-01
 resource "aws_security_group" "allow-ssh-ping-VPC" {
-  count = "${var.count}"
+  count = "${var.gateways}"
   vpc_id = "${element(aws_vpc.VPC.*.id,count.index)}"
   name = "allow-ssh"
   description = "security group that allows ssh and all egress traffic"

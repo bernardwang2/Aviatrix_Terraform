@@ -24,7 +24,7 @@ variable "INSTANCE_USERNAME" {
   default = "ubuntu"
 }
 
-variable "count"{}
+variable "gateways"{}
 
 variable "PATH_TO_PRIVATE_KEY" {
   default = "mykey"

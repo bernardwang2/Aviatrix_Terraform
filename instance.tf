@@ -1,6 +1,6 @@
 #VPC
 resource "aws_instance" "VPC-VM" {
-  count = "${var.count}"
+  count = "${var.gateways}"
   ami           = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
 

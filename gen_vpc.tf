@@ -1,6 +1,6 @@
 # Internet VPC
 resource "aws_vpc" "VPC" {
-    count = "${var.count}"
+    count = "${var.gateways}"
     cidr_block = "10.1.${count.index}.0/24"
     instance_tenancy = "default"
     enable_dns_support = "true"
@@ -13,7 +13,7 @@ resource "aws_vpc" "VPC" {
 
 # Subnets
 resource "aws_subnet" "VPC-public" {
-    count = "${var.count}"
+    count = "${var.gateways}"
     vpc_id = "${element(aws_vpc.VPC.*.id,count.index)}"
     cidr_block = "10.1.${count.index}.0/24"
     map_public_ip_on_launch = "true"
@@ -25,7 +25,7 @@ resource "aws_subnet" "VPC-public" {
 
 # Internet GW
 resource "aws_internet_gateway" "VPC-gw" {
-    count = "${var.count}"
+    count = "${var.gateways}"
     vpc_id = "${element(aws_vpc.VPC.*.id,count.index)}"
 
     tags {
@@ -35,7 +35,7 @@ resource "aws_internet_gateway" "VPC-gw" {
 
 # route tables
 resource "aws_route_table" "VPC-route" {
-     count = "${var.count}"
+     count = "${var.gateways}"
     vpc_id = "${element(aws_vpc.VPC.*.id,count.index)}"
     route {
         cidr_block = "0.0.0.0/0"
@@ -49,7 +49,7 @@ resource "aws_route_table" "VPC-route" {
 
 # route associations public
 resource "aws_route_table_association" "VPC-ra" {
-    count = "${var.count}"
+    count = "${var.gateways}"
     subnet_id = "${element(aws_subnet.VPC-public.*.id,count.index)}"
     route_table_id = "${element(aws_route_table.VPC-route.*.id,count.index)}"
 }
