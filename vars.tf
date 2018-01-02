@@ -23,9 +23,6 @@ variable "AWS_SECRET_KEY" {}
 variable "INSTANCE_USERNAME" {
   default = "ubuntu"
 }
-variable "PATH_TO_PRIVATE_KEY"{
-  default = "canada.pem"
-}
 
 variable "count"{}
 
