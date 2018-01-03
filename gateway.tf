@@ -1,5 +1,5 @@
 #VPC-GW
-resource "aviatrix_gateway" "VPC-W" {
+resource "aviatrix_gateway" "VPC-GW" {
   count = "${var.gateways}"
   cloud_type = 1
   account_name = "${aviatrix_account.example.account_name}"
