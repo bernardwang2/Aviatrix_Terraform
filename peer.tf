@@ -11,7 +11,7 @@ resource "aviatrix_tunnel" "tunnel1"{
 
 resource "aviatrix_tunnel" "final_tunnel"{
   vpc_name1 = "${aviatrix_gateway.VPC-GW.0.gw_name}"
-  vpc_name2 = "${aviatrix_gateway.Prem-VPC-GW.gw_name}"
+  vpc_name2 = "${aviatrix_gateway.On-Prem-VPC-GW.gw_name}"
   cluster   = "no"                                    
   over_aws_peering = "no"                           
   peering_hastatus = "disabled"                     
