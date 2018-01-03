@@ -1,7 +1,9 @@
 #!/bin/bash
 #setting up path for terraform
-cd ..
-mkdir terraform
+cd $HOME
+mkdir $HOME/test-Aviatrix
+mkdir $HOME/terraform
+
 cd terraform
 wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip?_ga=2.185301857.95159238.1514844249-2070037128.1513573039
 sudo apt-get install -y zip unzip
@@ -33,3 +35,10 @@ echo 'providers {
   "aviatrix" = "$GOPATH/bin/terraform-provider-aviatrix"
   }' >> ~/.terraformrc
 cd /home/ubuntu/test-Aviatrix
+echo
+pwd
+echo $GOPATH
+echo "Please manually source these files"
+echo "source ~/.bash_profile"
+echo "source ~/.zshrc"
+echo "export PATH=$PATH:/usr/local/go/bin"
