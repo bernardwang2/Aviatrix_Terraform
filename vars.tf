@@ -8,9 +8,7 @@ variable "A_account_email" {}
 variable "A_account_number" {}
 
 #AWS
-variable "AWS_REGION" {
-  default = "ca-central-1"
-}
+variable "AWS_REGION" {}
 variable "AMIS" {
   type = "map"
   default = {
