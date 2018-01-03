@@ -5,7 +5,7 @@ resource "aviatrix_tunnel" "tunnel1"{
   cluster   = "no"                                    
   over_aws_peering = "no"                           
   peering_hastatus = "disabled"                     
-  depends_on = ["aviatrix_gateway.Prem-VPC-GW"]
+  depends_on = ["aviatrix_gateway.On-Prem-VPC-GW"]
 
 }
 
@@ -15,5 +15,5 @@ resource "aviatrix_tunnel" "final_tunnel"{
   cluster   = "no"                                    
   over_aws_peering = "no"                           
   peering_hastatus = "disabled"                     
-  depends_on = ["aviatrix_gateway.Prem-VPC-GW"]
+  depends_on = ["aviatrix_gateway.On-Prem-VPC-GW"]
 }

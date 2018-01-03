@@ -1,5 +1,5 @@
 #VPC
-resource "aws_instance" "VPC-VM" {
+resource "aws_instance" "Linux-" {
   count = "${var.gateways}"
   ami           = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
@@ -14,14 +14,14 @@ resource "aws_instance" "VPC-VM" {
   key_name = "${aws_key_pair.mykeypair.key_name}"
 
   tags{
-    Name = "VPC-VM-${count.index}"
+    Name = "Linux-${count.index}"
   }
 
   
 }
 
 #Prem VPC-0
-resource "aws_instance" "Prem-VPC-VM" {
+resource "aws_instance" "Linux-On-Prem" {
   ami           = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
 
@@ -35,7 +35,7 @@ resource "aws_instance" "Prem-VPC-VM" {
   key_name = "${aws_key_pair.mykeypair.key_name}"
 
   tags{
-    Name = "Prem-VPC-VM"
+    Name = "Linux-On-Prem"
   }
  
 /*
@@ -50,10 +50,6 @@ resource "aws_instance" "Prem-VPC-VM" {
     private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}" 
   }
 
-
-  tags{
-    Name = "Prem-VPC-VM"
-  }
   depends_on = ["aviatrix_tunnel.tunnel2"]
 */
 }

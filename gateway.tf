@@ -12,10 +12,10 @@ resource "aviatrix_gateway" "VPC-GW" {
 
 
 #Prem-VPC-GW
-resource "aviatrix_gateway" "Prem-VPC-GW" {
+resource "aviatrix_gateway" "On-Prem-VPC-GW" {
   cloud_type = 1
   account_name = "${aviatrix_account.example.account_name}"
-  gw_name = "Prem-VPC-GW"
+  gw_name = "On-Prem-VPC-GW"
   vpc_id = "${aws_vpc.Prem-VPC.id}"
   vpc_reg = "ca-central-1"
   vpc_size = "t2.micro"
