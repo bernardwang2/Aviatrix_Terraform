@@ -53,15 +53,3 @@ resource "aws_instance" "Linux-On-Prem" {
   depends_on = ["aviatrix_tunnel.tunnel2"]
 */
 }
-
-output "public_ip"{
-  value = ["${aws_instance.Linux-.*.id},${aws_instance.Linux-.*.public_ip}"]
-}
-
-output "private_ip"{
-  value = ["${aws_instance.Linux-.*.id},${aws_instance.Linux-.*.private_ip}"]
-}
-
-output "On-Prem-ip"{
-  value = ["${aws_instance.Linux-On-Prem.id},${aws_instance.Linux-On-Prem.public_ip},${aws_instance.Linux-On-Prem.private_ip}]
-}
