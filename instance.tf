@@ -36,13 +36,13 @@ resource "aws_instance" "Linux-On-Prem" {
 
   tags{
     Name = "Linux-On-Prem"
-  }
- 
+  } 
+
 /*
   #ssh into instance
   provisioner "remote-exec" {
     inline = [
-      "sleep 200"
+      "sleep 50"
     ]
   }
   connection {
